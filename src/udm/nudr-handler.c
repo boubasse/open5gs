@@ -212,6 +212,10 @@ bool udm_nudr_dr_handle_subscription_authentication(
             milenage_generate(udm_ue->opc, udm_ue->amf, udm_ue->k, udm_ue->sqn,
                     udm_ue->rand, autn, ik, ck, ak, xres, &xres_len);
 
+            ogs_log_hexdump(OGS_LOG_INFO,
+                xres,
+                xres_len);
+
             ogs_assert(udm_ue->serving_network_name);
 
             /* TS33.501 Annex A.2 : Kausf derviation function */
@@ -225,6 +229,14 @@ bool udm_nudr_dr_handle_subscription_authentication(
                     ck, ik,
                     udm_ue->serving_network_name, udm_ue->rand, xres, xres_len,
                     xres_star);
+
+            ogs_log_hexdump(OGS_LOG_INFO,
+                xres,
+                xres_len);
+            
+            ogs_log_hexdump(OGS_LOG_INFO,
+                xres_star,
+                xres_len);
 
             memset(&AuthenticationVector, 0, sizeof(AuthenticationVector));
             AuthenticationVector.av_type = OpenAPI_av_type_5G_HE_AKA;
