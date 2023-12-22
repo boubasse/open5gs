@@ -230,17 +230,17 @@ bool udm_nudr_dr_handle_subscription_authentication(
                     udm_ue->serving_network_name, udm_ue->rand, xres, xres_len,
                     xres_star);
 
-            printf("xRES: \n")
+            printf("xRES: \n");
             ogs_log_hexdump(OGS_LOG_INFO,
                 xres,
                 xres_len);
-            printf("\n")
+            printf("\n");
             
-            printf("xRES*: \n")
+            printf("xRES*: \n");
             ogs_log_hexdump(OGS_LOG_INFO,
                 xres_star,
                 xres_len);
-            printf("\n")
+            printf("\n");
             memset(&AuthenticationVector, 0, sizeof(AuthenticationVector));
             AuthenticationVector.av_type = OpenAPI_av_type_5G_HE_AKA;
 

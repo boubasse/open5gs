@@ -78,9 +78,9 @@ static void ogs_kdf_common(uint8_t *key, uint32_t key_size,
     }
 
     if(fc == FC_FOR_RES_STAR_XRES_STAR_DERIVATION){
-        printf("S String: \n")
-        ogs_log_hexdump(OGS_LOG_INFO, s, pos)
-        printf("\n")
+        printf("S String: \n");
+        ogs_log_hexdump(OGS_LOG_INFO, s, pos);
+        printf("\n");
     }
     
     ogs_hmac_sha256(key, key_size, s, pos, output, OGS_SHA256_DIGEST_SIZE);
